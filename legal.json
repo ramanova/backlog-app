@@ -1,0 +1,9 @@
+{
+  "version": "2026-11-17",
+  "effective": "November 17, 2026",
+  "changes": [
+    "Optional Cloud Sync: sign in with Google or Apple to back up and sync your tasks. The Privacy Policy explains what is stored, where, and for how long.",
+    "Optional AI and voice assistants: connect Claude, ChatGPT or Gemini, or add tasks with Siri or Gemini.",
+    "Account rules: storage limits, fair use, and how to delete your account (in the app or at epochtasks.app)."
+  ]
+}
