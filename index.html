@@ -153,6 +153,8 @@
   .steps li b { color: var(--fg); font-weight: 600; }
   .pill { font-size: 11.5px; font-weight: 700; border-radius: 999px; padding: 2px 9px; background: var(--accent-soft); color: var(--accent); letter-spacing: .02em; }
   .note { color: var(--muted); font-size: 13.5px; margin-top: 14px; }
+  .address { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+  .address code { font: 600 15px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 9px 14px; word-break: break-all; }
 
   /* privacy */
   .privacy { background: var(--brand); color: #fff; border-radius: 28px; padding: 44px 28px; display: grid; gap: 28px; }
@@ -228,6 +230,9 @@
         <button class="tab" role="tab" data-s="gemini" aria-selected="true">Gemini <small>Android</small></button>
         <button class="tab" role="tab" data-s="claude" aria-selected="false">Claude</button>
         <button class="tab" role="tab" data-s="chatgpt" aria-selected="false">ChatGPT</button>
+        <button class="tab" role="tab" data-s="plants" aria-selected="false">Every 3 days</button>
+        <button class="tab" role="tab" data-s="puppy" aria-selected="false">Every 4 hours</button>
+        <button class="tab" role="tab" data-s="move" aria-selected="false">Reschedule</button>
         <button class="tab" role="tab" data-s="done" aria-selected="false">Check it off</button>
         <button class="tab" role="tab" data-s="siri" aria-selected="false">Siri <small>iPhone · soon</small></button>
       </div>
@@ -256,8 +261,8 @@
       <div class="grid">
         <div class="panel case"><div class="ico">🛂</div><h3>Renewals &amp; documents</h3><p>Passport, driver's license, car insurance, subscriptions. Set it once with a reminder a month ahead.</p><q>Add renew passport to Epoch Tasks, due in two weeks</q></div>
         <div class="panel case"><div class="ico">💳</div><h3>Bills &amp; payments</h3><p>Rent, card fees, taxes. Repeating tasks come back on schedule — paid this month, next month is already there.</p><q>Remind me to pay rent on the 1st of every month</q></div>
-        <div class="panel case"><div class="ico">🏠</div><h3>Home upkeep</h3><p>Water filter, AC service, smoke-alarm batteries — the jobs that only come around every few months.</p><q>Add replace the water filter, every 6 months</q></div>
-        <div class="panel case"><div class="ico">🩺</div><h3>Health &amp; family</h3><p>Dentist check-ups, prescription refills, school forms, vet visits — with a reminder the day before.</p><q>Add book a dentist check-up for next Monday at 9 AM</q></div>
+        <div class="panel case"><div class="ico">🪴</div><h3>Home &amp; garden</h3><p>Water the plants every 3 days, the filter every 6 months, smoke-alarm batteries once a year — any rhythm you like.</p><q>Water the plants every 3 days</q></div>
+        <div class="panel case"><div class="ico">🩺</div><h3>Health &amp; family</h3><p>Dentist check-ups, school forms, vet visits — with a reminder before each. A new puppy? Walks every 4 hours.</p><q>Remind me to walk the puppy every 4 hours, starting at 8 PM</q></div>
         <div class="panel case"><div class="ico">🛒</div><h3>Errands &amp; shopping</h3><p>Return a package before the window closes, restock the pantry, pick up the dry cleaning.</p><q>What's due this week?</q></div>
         <div class="panel case"><div class="ico">🎓</div><h3>Work &amp; study deadlines</h3><p>Reports, applications, exam registration. The bar fills up as the deadline gets closer, so nothing sneaks up on you.</p><q>I submitted the visa form — mark it done</q></div>
       </div>
@@ -286,25 +291,16 @@
       <div class="section-head">
         <div class="eyebrow">AI assistants</div>
         <h2>Connect your assistant in two minutes</h2>
-        <p class="lead">In the app, open <b>Settings → Connect an AI Assistant</b>, pick your assistant and tap <b>Create My Link</b>. Then paste the link once:</p>
+        <p class="lead">Every assistant uses the same address. Add it once, sign in with the Google account you use in Epoch Tasks, and tap <b>Allow</b> — no codes or keys to copy.</p>
+        <div class="address"><code id="mcp-url">https://connect.epochtasks.app/mcp</code><button class="btn small" id="copy-url" type="button">Copy</button></div>
       </div>
       <div class="grid">
         <div class="panel steps">
-          <h3>Gemini <span class="pill">web setup</span></h3>
-          <ol>
-            <li>On a computer, open <b>gemini.google.com</b> — custom apps can't be added from the Gemini phone app.</li>
-            <li>Click the gear (<b>Settings &amp; help</b>) → <b>Connected Apps</b>.</li>
-            <li>Scroll down, click <b>Add a custom app</b>, paste your link, click Next and approve.</li>
-            <li>In any chat — on the web or your phone — type <b>@</b> and pick Epoch Tasks.</li>
-          </ol>
-          <p class="note">Gemini custom apps are rolling out by country, account type and plan. On Android 16+, Gemini can also add tasks right on your phone, without a link, as Google enables it.</p>
-        </div>
-        <div class="panel steps">
           <h3>Claude</h3>
           <ol>
-            <li>On claude.ai, go to <b>Customize → Connectors</b>.</li>
-            <li>Click <b>+ Add</b> → <b>Add custom connector</b>.</li>
-            <li>Name it Epoch Tasks, paste your link, choose <b>No sign in</b>, and add it.</li>
+            <li>On claude.ai, go to <b>Customize → Connectors</b> and choose <b>Add custom connector</b>.</li>
+            <li>Name it Epoch Tasks and paste the address.</li>
+            <li>Click <b>Connect</b>, continue with Google and tap <b>Allow</b>.</li>
             <li>In a chat, switch it on under <b>+ → Connectors</b>. Works in the phone app too.</li>
           </ol>
         </div>
@@ -312,13 +308,23 @@
           <h3>ChatGPT</h3>
           <ol>
             <li>On a computer, go to <b>chatgpt.com/plugins</b>.</li>
-            <li>Click <b>+</b> → <b>Add custom MCP server</b>.</li>
-            <li>Name it Epoch Tasks, paste your link, choose <b>No authentication</b>, and create it.</li>
+            <li>Click <b>+</b> → <b>Add custom MCP server</b>, name it Epoch Tasks and paste the address.</li>
+            <li>For authentication choose <b>OAuth</b>, create it, then continue with Google and tap <b>Allow</b>.</li>
             <li>Ask away — ChatGPT confirms before it changes anything.</li>
           </ol>
-          <p class="note">Also works with Claude Code, Cursor, VS Code and other apps that support MCP servers.</p>
+        </div>
+        <div class="panel steps">
+          <h3>Gemini <span class="pill">web setup</span></h3>
+          <ol>
+            <li>On a computer, open <b>gemini.google.com</b> — custom apps can't be added from the Gemini phone app.</li>
+            <li>Click the gear (<b>Settings &amp; help</b>) → <b>Connected Apps</b> → <b>Add a custom app</b>.</li>
+            <li>Paste the address, then continue with Google and tap <b>Allow</b>.</li>
+            <li>In any chat — on the web or your phone — type <b>@</b> and pick Epoch Tasks.</li>
+          </ol>
+          <p class="note">Gemini custom apps are rolling out by country, account type and plan.</p>
         </div>
       </div>
+      <p class="note">Also works with Claude Code, Cursor, VS Code and other apps that support MCP servers. App can't sign in? In Epoch Tasks, <b>Settings → Connect an AI Assistant</b> gives you a personal link instead.</p>
     </div>
   </section>
 
@@ -333,7 +339,7 @@
         <ul>
           <li>No account, no sign-up: your tasks stay on your device unless you turn on Cloud Sync.</li>
           <li>Cloud Sync is private to your account, and you can delete it any time — right in the app.</li>
-          <li>Each AI-assistant link is yours alone, and you can switch it off instantly.</li>
+          <li>An AI assistant connects only after you sign in and tap Allow, or through a personal link you create. It can't delete your account, and you can disconnect it instantly in the app.</li>
           <li>We don't sell your data or use it for ads. No analytics of our own. <a href="./privacy.html">Read the Privacy Policy</a>.</li>
         </ul>
       </div>
@@ -345,7 +351,9 @@
       <div class="section-head"><div class="eyebrow">FAQ</div><h2>Questions</h2></div>
       <details><summary>Do I need an account?</summary><p>No. Everything works on your phone without signing in. Sign in with Google only if you want Cloud Sync (backup and sync across devices) or an AI assistant.</p></details>
       <details><summary>Which AI assistants work with Epoch Tasks?</summary><p>Claude, ChatGPT and Gemini, plus apps that support MCP servers such as Claude Code, Cursor and VS Code. You can ask them to add tasks, find what's due, change dates and mark tasks done.</p></details>
-      <details><summary>How do I add tasks with Gemini?</summary><p>Connect Epoch Tasks on gemini.google.com (Settings &amp; help → Connected Apps → Add a custom app, then paste the link from the app), then type @ in a Gemini chat and pick Epoch Tasks. Gemini's custom apps are rolling out by country, account and plan. On Android 16 and later, Gemini can also add tasks directly on your phone as Google enables it for apps.</p></details>
+      <details><summary>How do I add tasks with Gemini?</summary><p>Connect Epoch Tasks on gemini.google.com (Settings &amp; help → Connected Apps → Add a custom app, paste <b>https://connect.epochtasks.app/mcp</b>, then sign in with Google and tap Allow), then type @ in a Gemini chat and pick Epoch Tasks. Gemini's custom apps are rolling out by country, account and plan. On Android 16 and later, Gemini can also add tasks directly on your phone as Google enables it for apps.</p></details>
+      <details><summary>What can an AI assistant do with my tasks?</summary><p>See your tasks, tags and notes, and add, change, complete or delete tasks — only for the account you signed in with, and only after you tap Allow (or give it a personal link you created). It can't delete your account or reach anyone else's tasks. Settings → Connect an AI Assistant lists every connected assistant; disconnecting one ends its access immediately.</p></details>
+      <details><summary>Can tasks repeat every few days, or every few hours?</summary><p>Yes. Pick weekly, monthly or yearly — or Custom, for every N hours, days, weeks, months or years: water the plants every 3 days, walk the puppy every 4 hours. Hourly tasks run around the clock; if you miss some, up to the last 10 stay on your list as overdue.</p></details>
       <details><summary>Is there an iPhone version?</summary><p>It's on the way, with Siri support: "Hey Siri, add a task in Epoch Tasks".</p></details>
       <details><summary>What does it cost?</summary><p>Epoch Tasks is free with ads. A one-time purchase removes them for good — no subscription.</p></details>
       <details><summary>How do I delete my data?</summary><p>Without Cloud Sync, your data lives only on your phone — uninstalling deletes it. With Cloud Sync, use Settings → Cloud Sync → Delete Account, or see <a href="./delete-account.html">how to delete your account</a>.</p></details>
@@ -404,7 +412,7 @@
         const pct = Math.max(6, Math.min(97, 100 - (t.days / t.span) * 100));
         const cls = ['card', flags.new === t.id ? 'new' : '', (flags.hit || []).includes(t.id) ? 'hit' : '', flags.done === t.id ? 'done' : ''].join(' ');
         return `<div class="${cls}" data-id="${t.id}"><div class="row"><div class="title">${esc(t.title)}${t.repeat ? ' 🔁' : ''}</div><span class="tag">${esc(t.tag)}</span></div>` +
-          `<div class="meta"><span>🕑 ${t.days === 1 ? '1 day' : t.days + ' days'} left</span><span>📅 ${fmt(at(t.days))} · ${t.time}</span></div>` +
+          `<div class="meta"><span>🕑 ${t.days === 0 ? 'Due today' : (t.days === 1 ? '1 day' : t.days + ' days') + ' left'}</span><span>📅 ${fmt(at(t.days))} · ${t.time}</span></div>` +
           `<div class="bar"><i style="width:${pct}%;background:${grad(t.days)}"></i></div></div>`;
       }).join('')).join('');
   }
@@ -426,7 +434,7 @@
       caption: 'Repeating tasks come back on schedule.',
       steps: [
         ['you', 'Remind me to pay rent on the 1st of every month'],
-        ['tool', 'Epoch Tasks · add_task'],
+        ['tool', 'Epoch Tasks · create_task'],
         ['ai', `Done — “Pay rent” repeats monthly on the 1st. The next one is due ${fmt(at(rent))}, with a reminder the day before.`],
         ['add', { id: 'rent', title: 'Pay rent', tag: '💳 Bills', days: rent, time: '9:00 AM', span: 30, repeat: true }],
       ],
@@ -439,6 +447,36 @@
         ['tool', 'Epoch Tasks · list_tasks'],
         ['ai', `Two things this week: <b>Credit card annual fee</b> in 2 days (${fmt(at(2))}) and <b>AC cleaning service</b> in 5 days. Nothing is overdue.`],
         ['hit', ['fee', 'ac']],
+      ],
+    },
+    plants: {
+      who: 'Claude', sub: 'with the Epoch Tasks connector', dot: 'C', bg: '#c96442',
+      caption: 'Any rhythm: every 3 days, every 2 weeks, every 6 months.',
+      steps: [
+        ['you', 'Water the plants every 3 days, starting tomorrow evening'],
+        ['tool', 'Epoch Tasks · create_task'],
+        ['ai', `Added “Water the plants” — every 3 days at 6:00 PM, starting ${fmt(at(1))}. Check one off and the next is already there.`],
+        ['add', { id: 'plants', title: 'Water the plants', tag: '🪴 Home', days: 1, time: '6:00 PM', span: 3, repeat: true }],
+      ],
+    },
+    puppy: {
+      who: 'ChatGPT', sub: 'with the Epoch Tasks app', dot: '✦', bg: '#10a37f',
+      caption: 'Every few hours, around the clock — with a reminder before each.',
+      steps: [
+        ['you', 'Remind me to walk the puppy every 4 hours, starting at 8 PM'],
+        ['tool', 'Epoch Tasks · create_task'],
+        ['ai', 'Set — “Walk the puppy” every 4 hours, day and night: 8 PM, 12 AM, 4 AM and on. Check each walk off as you go; the next one is already there.'],
+        ['add', { id: 'puppy', title: 'Walk the puppy', tag: '🏠 Home', days: 0, time: '8:00 PM', span: 1, repeat: true }],
+      ],
+    },
+    move: {
+      who: 'Gemini', sub: 'on gemini.google.com', dot: 'G', bg: 'linear-gradient(135deg,#4f7df3,#a06cf0)',
+      caption: 'Plans change — just say so.',
+      steps: [
+        ['you', 'Push the AC cleaning back a week, same time'],
+        ['tool', 'Using Epoch Tasks · update task'],
+        ['ai', `Moved “AC cleaning service” to ${fmt(at(12))} at 6:00 PM.`],
+        ['move', { id: 'ac', days: 12, time: '6:00 PM' }],
       ],
     },
     done: {
@@ -499,6 +537,9 @@
         await wait(kind === 'you' ? 900 : 700);
       } else if (kind === 'add') {
         tasks.push(val); render({ new: val.id });
+      } else if (kind === 'move') {
+        tasks = tasks.map((t) => (t.id === val.id ? { ...t, days: val.days, time: val.time } : t));
+        render({ new: val.id });
       } else if (kind === 'hit') {
         render({ hit: val });
       } else if (kind === 'done') {
@@ -517,6 +558,13 @@
     current = b.dataset.s; play(current);
   }));
   document.getElementById('replay').addEventListener('click', () => play(current));
+  document.getElementById('copy-url').addEventListener('click', async (e) => {
+    try {
+      await navigator.clipboard.writeText(document.getElementById('mcp-url').textContent);
+      e.target.textContent = 'Copied';
+      setTimeout(() => (e.target.textContent = 'Copy'), 1500);
+    } catch { /* selecting the address by hand still works */ }
+  });
 
   // start when the demo scrolls into view
   render();

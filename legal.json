@@ -1,9 +1,10 @@
 {
-  "version": "2026-11-17",
-  "effective": "November 17, 2026",
+  "version": "2026-11-25",
+  "effective": "November 25, 2026",
   "changes": [
-    "Optional Cloud Sync: sign in with Google or Apple to back up and sync your tasks. The Privacy Policy explains what is stored, where, and for how long.",
-    "Optional AI and voice assistants: connect Claude, ChatGPT or Gemini, or add tasks with Siri or Gemini.",
-    "Account rules: storage limits, fair use, and how to delete your account (in the app or at epochtasks.app)."
+    "AI assistants can now connect by signing in with Google and tapping Allow, as well as with a personal link. The Privacy Policy explains what this stores and how to disconnect.",
+    "Connecting an assistant this way creates an account if you don't have one yet, even without the app.",
+    "Clearer about sign-in and deletion: Google also gives us the web address of your profile picture, and after you delete your account we keep only its random identifier and the deletion date.",
+    "From November 17, if you haven't seen them: optional Cloud Sync, AI and voice assistants, storage limits, fair use and how to delete your account."
   ]
 }
