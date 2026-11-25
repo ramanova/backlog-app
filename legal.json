@@ -2,11 +2,8 @@
   "version": "2026-11-26",
   "effective": "November 26, 2026",
   "changes": [
-    "These Terms apply to everyone who uses Epoch Tasks, including for tasks kept only on this phone. Versions up to 1.4.0 say below that nothing changes for those tasks; that isn't so for these Terms.",
-    "Clearer limits on our responsibility: the app is a convenience tool, so don't use it for medical, emergency, safety-critical or other high-risk purposes, and keep your own backups.",
-    "AI and voice assistants can make mistakes or delete tasks; check what they do. We aren't responsible for their output, to the extent the law allows.",
-    "Limits on damages and on how disputes are handled. Your mandatory consumer rights stay the same.",
-    "From November 25: assistants can connect by signing in with Google (this creates an account if you have none), and what we keep after you delete your account.",
-    "From November 17, if you haven't seen them: optional Cloud Sync, AI and voice assistants, storage limits, fair use and how to delete your account."
+    "Clearer limits on our responsibility. They also apply to tasks kept only on this phone.",
+    "Not for medical, emergency or other high-risk uses. Keep your own backups.",
+    "AI assistants can make mistakes, and signing in from one creates an account."
   ]
 }
