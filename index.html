@@ -203,7 +203,7 @@
       <div>
         <div class="eyebrow">To-do list for Android</div>
         <h1>To-dos that <span>keep time.</span></h1>
-        <p class="lead">Renewals, bills, appointments, chores — every task shows how much time is left, and reminds you before it's late. Add tasks with a tap, or just ask Gemini, Claude or ChatGPT.</p>
+        <p class="lead">Renewals, bills, appointments, chores — every task shows how much time is left, and can remind you ahead of time. Add tasks with a tap, or just ask Gemini, Claude or ChatGPT.</p>
         <div class="cta">
           <a class="btn primary" href="#beta">Join the Android beta</a>
           <a class="btn ghost" href="#demo">▶ See it in action</a>
@@ -231,7 +231,7 @@
         <button class="tab" role="tab" data-s="claude" aria-selected="false">Claude</button>
         <button class="tab" role="tab" data-s="chatgpt" aria-selected="false">ChatGPT</button>
         <button class="tab" role="tab" data-s="plants" aria-selected="false">Every 3 days</button>
-        <button class="tab" role="tab" data-s="puppy" aria-selected="false">Every 4 hours</button>
+        <button class="tab" role="tab" data-s="stretch" aria-selected="false">Every 2 hours</button>
         <button class="tab" role="tab" data-s="move" aria-selected="false">Reschedule</button>
         <button class="tab" role="tab" data-s="done" aria-selected="false">Check it off</button>
         <button class="tab" role="tab" data-s="siri" aria-selected="false">Siri <small>iPhone · soon</small></button>
@@ -248,6 +248,7 @@
           <div class="app-note">Your Epoch Tasks list</div>
         </div>
       </div>
+      <p style="margin-top:18px;font-size:13.5px;color:var(--muted)">Illustrations: assistants can get things wrong, and reminders are best-effort and can be late or missed. Don't rely on the app for medical, emergency or safety-critical needs. See the <a href="terms.html">Terms</a>.</p>
     </div>
   </section>
 
@@ -262,7 +263,7 @@
         <div class="panel case"><div class="ico">🛂</div><h3>Renewals &amp; documents</h3><p>Passport, driver's license, car insurance, subscriptions. Set it once with a reminder a month ahead.</p><q>Add renew passport to Epoch Tasks, due in two weeks</q></div>
         <div class="panel case"><div class="ico">💳</div><h3>Bills &amp; payments</h3><p>Rent, card fees, taxes. Repeating tasks come back on schedule — paid this month, next month is already there.</p><q>Remind me to pay rent on the 1st of every month</q></div>
         <div class="panel case"><div class="ico">🪴</div><h3>Home &amp; garden</h3><p>Water the plants every 3 days, the filter every 6 months, smoke-alarm batteries once a year — any rhythm you like.</p><q>Water the plants every 3 days</q></div>
-        <div class="panel case"><div class="ico">🩺</div><h3>Health &amp; family</h3><p>Dentist check-ups, school forms, vet visits — with a reminder before each. A new puppy? Walks every 4 hours.</p><q>Remind me to walk the puppy every 4 hours, starting at 8 PM</q></div>
+        <div class="panel case"><div class="ico">🩺</div><h3>Health &amp; family</h3><p>Dentist check-ups, school forms, vet visits — with reminders ahead of time. Sitting all day? Stretch every 2 hours.</p><q>Remind me to stretch every 2 hours, starting at 8 PM</q></div>
         <div class="panel case"><div class="ico">🛒</div><h3>Errands &amp; shopping</h3><p>Return a package before the window closes, restock the pantry, pick up the dry cleaning.</p><q>What's due this week?</q></div>
         <div class="panel case"><div class="ico">🎓</div><h3>Work &amp; study deadlines</h3><p>Reports, applications, exam registration. The bar fills up as the deadline gets closer, so nothing sneaks up on you.</p><q>I submitted the visa form — mark it done</q></div>
       </div>
@@ -353,7 +354,7 @@
       <details><summary>Which AI assistants work with Epoch Tasks?</summary><p>Claude, ChatGPT and Gemini, plus apps that support MCP servers such as Claude Code, Cursor and VS Code. You can ask them to add tasks, find what's due, change dates and mark tasks done.</p></details>
       <details><summary>How do I add tasks with Gemini?</summary><p>Connect Epoch Tasks on gemini.google.com (Settings &amp; help → Connected Apps → Add a custom app, paste <b>https://connect.epochtasks.app/mcp</b>, then sign in with Google and tap Allow), then type @ in a Gemini chat and pick Epoch Tasks. Gemini's custom apps are rolling out by country, account and plan. On Android 16 and later, Gemini can also add tasks directly on your phone as Google enables it for apps.</p></details>
       <details><summary>What can an AI assistant do with my tasks?</summary><p>See your tasks, tags and notes, and add, change, complete or delete tasks — only for the account you signed in with, and only after you tap Allow (or give it a personal link you created). It can't delete your account or reach anyone else's tasks. Settings → Connect an AI Assistant lists every connected assistant; disconnecting one ends its access immediately.</p></details>
-      <details><summary>Can tasks repeat every few days, or every few hours?</summary><p>Yes. Pick weekly, monthly or yearly — or Custom, for every N hours, days, weeks, months or years: water the plants every 3 days, walk the puppy every 4 hours. Hourly tasks run around the clock; if you miss some, up to the last 10 stay on your list as overdue.</p></details>
+      <details><summary>Can tasks repeat every few days, or every few hours?</summary><p>Yes. Pick weekly, monthly or yearly — or Custom, for every N hours, days, weeks, months or years: water the plants every 3 days, stretch every 2 hours. Hourly tasks run around the clock; if you miss some, up to the last 10 stay on your list as overdue.</p></details>
       <details><summary>Is there an iPhone version?</summary><p>It's on the way, with Siri support: "Hey Siri, add a task in Epoch Tasks".</p></details>
       <details><summary>What does it cost?</summary><p>Epoch Tasks is free with ads. A one-time purchase removes them for good — no subscription.</p></details>
       <details><summary>How do I delete my data?</summary><p>Without Cloud Sync, your data lives only on your phone — uninstalling deletes it. With Cloud Sync, use Settings → Cloud Sync → Delete Account, or see <a href="./delete-account.html">how to delete your account</a>.</p></details>
@@ -459,14 +460,14 @@
         ['add', { id: 'plants', title: 'Water the plants', tag: '🪴 Home', days: 1, time: '6:00 PM', span: 3, repeat: true }],
       ],
     },
-    puppy: {
+    stretch: {
       who: 'ChatGPT', sub: 'with the Epoch Tasks app', dot: '✦', bg: '#10a37f',
-      caption: 'Every few hours, around the clock — with a reminder before each.',
+      caption: 'Every few hours, for as long as you like.',
       steps: [
-        ['you', 'Remind me to walk the puppy every 4 hours, starting at 8 PM'],
+        ['you', 'Remind me to stretch every 2 hours, starting at 8 PM'],
         ['tool', 'Epoch Tasks · create_task'],
-        ['ai', 'Set — “Walk the puppy” every 4 hours, day and night: 8 PM, 12 AM, 4 AM and on. Check each walk off as you go; the next one is already there.'],
-        ['add', { id: 'puppy', title: 'Walk the puppy', tag: '🏠 Home', days: 0, time: '8:00 PM', span: 1, repeat: true }],
+        ['ai', 'Set — “Stretch” every 2 hours: 8 PM, 10 PM, 12 AM and on. Check each one off as you go; the next one is already there.'],
+        ['add', { id: 'stretch', title: 'Stretch', tag: '🩺 Health', days: 0, time: '8:00 PM', span: 1, repeat: true }],
       ],
     },
     move: {

@@ -1,10 +1,12 @@
 {
-  "version": "2026-11-25",
-  "effective": "November 25, 2026",
+  "version": "2026-11-26",
+  "effective": "November 26, 2026",
   "changes": [
-    "AI assistants can now connect by signing in with Google and tapping Allow, as well as with a personal link. The Privacy Policy explains what this stores and how to disconnect.",
-    "Connecting an assistant this way creates an account if you don't have one yet, even without the app.",
-    "Clearer about sign-in and deletion: Google also gives us the web address of your profile picture, and after you delete your account we keep only its random identifier and the deletion date.",
+    "These Terms apply to everyone who uses Epoch Tasks, including for tasks kept only on this phone. Versions up to 1.4.0 say below that nothing changes for those tasks; that isn't so for these Terms.",
+    "Clearer limits on our responsibility: the app is a convenience tool, so don't use it for medical, emergency, safety-critical or other high-risk purposes, and keep your own backups.",
+    "AI and voice assistants can make mistakes or delete tasks; check what they do. We aren't responsible for their output, to the extent the law allows.",
+    "Limits on damages and on how disputes are handled. Your mandatory consumer rights stay the same.",
+    "From November 25: assistants can connect by signing in with Google (this creates an account if you have none), and what we keep after you delete your account.",
     "From November 17, if you haven't seen them: optional Cloud Sync, AI and voice assistants, storage limits, fair use and how to delete your account."
   ]
 }
